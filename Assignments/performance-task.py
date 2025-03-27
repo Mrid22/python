@@ -35,7 +35,26 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' }
 }
 """
-  }
+  },
+  "auto-pairs": {
+     "name": "auto-pairs",
+     "single_file": """
+{
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    opts = {}
+}
+""",
+"multi_file": """
+return {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    opts = {}
+}
+""" 
+  } 
 }
 
 
