@@ -1,16 +1,30 @@
 import cutie
 single_file_mode = cutie.prompt_yes_or_no("is your setup single file?")
-
-tokyonight = {
+i_counter = 0
+plugins = {
+    "tokyonight": {
         "name": "tokyonight",
-        "single_file_code": """{
+        "single_file": """
+{
   "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
   opts = {},
-}"""
-    }
+}
+"""
+    },
+  "lualine": {
+      "name": "lualine",
+      "single_file": """
+{
+  'nvim-lualine/lualine.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' }
+}
+"""
+  }
+}
 
-plugins = [tokyonight["name"]]
+for i, j in plugins.items():
+    print(j["single_file"])
 
-cutie.select(plugins)
+selected = cutie.select(plugins)
