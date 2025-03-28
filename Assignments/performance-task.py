@@ -2,7 +2,7 @@ import cutie
 single_file_mode = cutie.prompt_yes_or_no("is your setup single file?")
 value_counter = 0
 plugins = {
-    "tokyonight": {
+  "tokyonight": {
         "name": "tokyonight",
         "single_file": """
 {
@@ -11,7 +11,9 @@ plugins = {
   priority = 1000,
   opts = {},
 }
-""",
+"""
+# Code inside string from https://github.com/folke/tokyonight.nvim
+,
     "multi_file": """
 return {
   "folke/tokyonight.nvim",
@@ -19,7 +21,8 @@ return {
   priority = 1000,
   opts = {},
 }
-"""     
+"""
+# Code inside string from https://github.com/folke/tokyonight.nvim     
     },
   "lualine": {
       "name": "lualine",
@@ -28,13 +31,16 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' }
 }
-""",
+"""
+# Code inside string from https://github.com/nvim-lualine/lualine.nvim
+,
     "multi_file": """
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
 }
 """
+# Code inside string from https://github.com/nvim-lualine/lualine.nvim
   },
   "auto-pairs": {
      "name": "auto-pairs",
@@ -45,7 +51,9 @@ return {
     config = true
     opts = {}
 }
-""",
+"""
+# Code inside string from  https://github.com/windwp/nvim-autopairs
+,
 "multi_file": """
 return {
     'windwp/nvim-autopairs',
@@ -53,7 +61,8 @@ return {
     config = true
     opts = {}
 }
-""" 
+"""
+# Code inside string from  https://github.com/windwp/nvim-autopairs
   } 
 }
 
